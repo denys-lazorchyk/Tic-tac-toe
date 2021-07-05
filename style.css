@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: rgb(203, 197, 255);
+  --secondary-color: rgb(255, 221, 157);
+  --background-color: white;
+  --font-color: grey;
+  --animation-X: 0px;
+  --animation-Y: -290px;
+  --animation-rotate: 0deg;
+}
+
+main {
+  background: repeating-linear-gradient(
+    60deg,
+    #fff,
+    #fff 10px,
+    rgb(203, 197, 255) 10px,
+    rgb(203, 197, 255) 20px
+  );
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: "Big Shoulders Stencil Display", cursive;
+}
+
+main > div {
+  background-color: white;
+  width: 90%;
+  height: 80vh;
+  padding: 20px 0px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px;
+  z-index: 2;
+}
+
+td {
+  margin: 0;
+  background-color: rgb(203, 197, 255);
+  width: 100px;
+  height: 100px;
+}
+
+td img {
+  margin: 10px;
+  display: none;
+}
+
+.reset {
+  border: 3px solid rgb(203, 197, 255);
+  display: inline;
+  width: 100%;
+  padding: 18px 32px;
+  border-radius: 40px;
+  background-color: white;
+  color: grey;
+  font-size: 1.5em;
+  margin-top: 20px;
+  transition: all 2s;
+  font-family: inherit;
+}
+
+@keyframes amin7 {
+  0% {
+  }
+  30% {
+    transform: translate(var(--animation-X), var(--animation-Y))
+      rotate(var(--animation-rotate));
+    font-size: 0px;
+    margin-top: 33px;
+    padding: 6px 10px;
+    height: auto;
+    border-color: var(--secondary-color);
+  }
+  100% {
+    font-size: 1.5em;
+  }
+}
+
+.reset.active {
+  animation-name: amin7;
+  animation-duration: 4s;
+}
+
+.players {
+  margin-bottom: 30px;
+}
+
+.player-1,
+.player-2 {
+  background-color: rgb(255, 221, 157);
+  color: white;
+  padding: 1em 1em;
+  margin-bottom: 30px;
+  height: 8rem;
+  width: 10rem;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.3s;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.player-1 img,
+.player-2 img {
+  margin: 0px 20px;
+  max-height: 70%;
+}
+
+.player-1.active,
+.player-2.active {
+  background-color: rgb(203, 197, 255);
+  box-shadow: 0px 0px 3px 3px rgb(202, 168, 209);
+  transform: scale(1.05);
+}
+
+.statistics {
+  color: grey;
+  margin-top: -100px;
+}
+
+.statistics > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+}
+
+.reset-statistics {
+  background: transparent;
+  border: none;
+}
+
+@media (min-width: 1200px) {
+  main > div {
+    height: 85vh;
+  }
+
+  td {
+    height: 150px;
+    width: 150px;
+  }
+
+  td img {
+    height: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  main > div {
+    flex-direction: column-reverse;
+    width: 70%;
+    height: auto;
+  }
+
+  .players {
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .player-1 img,
+  .player-2 img {
+    margin: 0;
+    height: 50px;
+  }
+
+  .player-1 h1,
+  .player-2 h1 {
+    font-size: 1.5em;
+    display: block;
+    float: left;
+    margin: 5px 5px;
+  }
+
+  .player-1,
+  .player-2 {
+    padding: 10px 0px 0px 10px;
+    margin: 15px;
+    height: 60px;
+    width: 150px;
+    writing-mode: unset;
+  }
+
+  .statistics {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .statistics > h1 {
+    display: none !important;
+  }
+  .statistics h1 {
+    font-size: 1.5em;
+    margin: 2vmin;
+  }
+
+  .statistics > div {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+  }
+}

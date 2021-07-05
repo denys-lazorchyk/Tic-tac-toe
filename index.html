@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic-tac-toe</title>
+  </head>
+  <body class="active body">
+    <main>
+      <div>
+        <div class="statistics">
+          <h1 style="font-size: 4em">Statistics:</h1>
+          <div>
+            <h1>Wins of P1: <span class="wins_p1">0</span></h1>
+            <h1>Ties: <span class="ties">0</span></h1>
+            <h1>Wins of P2: <span class="wins_p2">0</span></h1>
+          </div>
+          <button class="reset-statistics">x reset statistics</button>
+        </div>
+        <div class="main-game">
+          <table>
+            <tr>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+            </tr>
+            <tr>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+            </tr>
+            <tr>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+              <td class="spot">
+                <img src="./SVGs/Cross.svg" alt="cross" class="cr" />
+                <img src="./SVGs/Circle.svg" alt="cross" class="cir" />
+              </td>
+            </tr>
+          </table>
+          <button class="reset">Reset me</button>
+        </div>
+        <div class="players">
+          <div class="player-1 active">
+            <h1>Player 1</h1>
+            <img src="./SVGs/Cross.svg" alt="cross" />
+          </div>
+          <div class="player-2">
+            <h1>Player 2</h1>
+            <img src="./SVGs/Circle.svg" alt="cross" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="code.js"></script>
+  </body>
+</html>
