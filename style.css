@@ -72,7 +72,7 @@ td img {
 	font-family: inherit;
 }
 
-@keyframes amin7 {
+@keyframes anim7 {
 	0% {
 	}
 	30% {
@@ -89,8 +89,26 @@ td img {
 	}
 }
 
+@keyframes animResp {
+	0% {
+	}
+	30% {
+		transform: translate(var(--animation-X), var(--animation-Y))
+			rotate(var(--animation-rotate));
+		font-size: 0px;
+		margin-top: 33px;
+		padding: 6px 10px;
+		height: auto;
+		width: 110vw;
+		border-color: var(--secondary-color);
+	}
+	100% {
+		font-size: 1.5em;
+	}
+}
+
 .reset.active {
-	animation-name: amin7;
+	animation-name: anim7;
 	animation-duration: 4s;
 }
 
@@ -163,15 +181,14 @@ td img {
 	main > div {
 		flex-direction: column-reverse;
 		width: 85%;
+		min-height: 80vh;
 		height: auto;
-		/* margin: 20px; */
-		padding: 15px;
+		padding: 12px;
 	}
 
 	td {
 		height: 25vw;
 		width: 25vw;
-		/* width: 25vw; */
 	}
 
 	td img {
@@ -209,6 +226,12 @@ td img {
 		writing-mode: unset;
 	}
 
+	/* .player-1.active,
+	.player-2.active {
+		width: 90vw;
+		transform: scale(1.05);
+	} */
+
 	.statistics {
 		width: 100%;
 		text-align: center;
@@ -233,5 +256,12 @@ td img {
 		padding: 12px 16px;
 		max-width: 80%;
 		margin-left: 10%;
+	}
+}
+
+@media (max-width: 500px) {
+	.player-1,
+	.player-2 {
+		margin: 10px 2vw;
 	}
 }

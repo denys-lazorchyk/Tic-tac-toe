@@ -16,41 +16,42 @@ const ties = document.querySelector(".ties");
 const r = document.querySelector(":root");
 
 const animPropsBig = [
-	[0, -420, 0],
-	[0, -270, 0],
-	[0, -120, 0],
-	[-150, -270, 90],
-	[0, -270, 90],
-	[150, -270, 90],
-	[0, -270, 45],
-	[0, -270, -45],
+	[`0px`, "-420px", 0],
+	[`0px`, `-270px`, 0],
+	[`0px`, `-120px`, 0],
+	[`-150px`, `-270px`, 90],
+	[`0px`, `-270px`, 90],
+	[`150px`, `-270px`, 90],
+	[`0px`, `-270px`, 45],
+	[`0px`, `-270px`, -45],
 ];
 
 const animPropsSmall = [
-	[0, -290, 0],
-	[0, -190, 0],
-	[0, -90, 0],
-	[-100, -200, 90],
-	[0, -200, 90],
-	[100, -200, 90],
-	[0, -200, 45],
-	[0, -200, -45],
+	[`0px`, `-290px`, 0],
+	[`0px`, `-190px`, 0],
+	[`0px`, `-90px`, 0],
+	[`-100px`, `-200px`, 90],
+	[`0px`, `-200px`, 90],
+	[`100px`, `-200px`, 90],
+	[`0px`, `-200px`, 45],
+	[`0px`, `-200px`, -45],
 ];
 
 const animPropsSmallExtra = [
-	[0, -290, 0],
-	[0, -190, 0],
-	[0, -90, 0],
-	[-100, -200, 90],
-	[0, -200, 90],
-	[100, -200, 90],
-	[0, -200, 45],
-	[0, -200, -45],
+	[`0px`, `-70vw`, 0],
+	[`0px`, `-45vw`, 0],
+	[`0px`, `-20vw`, 0],
+	[`-25vw`, `-45vw`, 90],
+	[`0px`, `-45vw`, 90],
+	[`25vw`, `-45vw`, 90],
+	[`0px`, `-45vw`, 45],
+	[`0px`, `-45vw`, -45],
 ];
 
 const animProps = {
-	1: animPropsSmall,
-	2: animPropsBig,
+	1: animPropsBig,
+	2: animPropsSmall,
+	3: animPropsSmallExtra,
 };
 
 console.log(window.screen.width);
@@ -90,19 +91,25 @@ const displayWinner = function (a, numberOfStruct) {
 	let screenChoice;
 
 	if (window.screen.width >= 1200) {
+		screenChoice = 1;
+	} else if (window.screen.width > 900) {
 		screenChoice = 2;
 	} else {
-		screenChoice = 1;
+		screenChoice = 3;
 	}
+
+	// if (screenChoice === 3) {
+	// 	document.querySelector(".reset.active").style.animationName = "animResp";
+	// }
 
 	if (a === 1 || a === 2) {
 		r.style.setProperty(
 			"--animation-X",
-			`${animProps[screenChoice][numberOfStruct][0]}px`
+			`${animProps[screenChoice][numberOfStruct][0]}`
 		);
 		r.style.setProperty(
 			"--animation-Y",
-			`${animProps[screenChoice][numberOfStruct][1]}px`
+			`${animProps[screenChoice][numberOfStruct][1]}`
 		);
 		r.style.setProperty(
 			"--animation-rotate",
@@ -118,6 +125,9 @@ const displayWinner = function (a, numberOfStruct) {
 		}
 
 		reset.classList.toggle("active");
+		if (screenChoice === 3) {
+			document.querySelector(".reset.active").style.animationName = "animResp";
+		}
 		reset.innerHTML = `P${active_player} won! Play again?`;
 	} else {
 		reset.innerHTML = "It is a tie, baby! Play again?";
